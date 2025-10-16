@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Solver App</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #captchaImage { max-width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Captcha Solver App</h1>
+    <form id="captchaForm">
+        <label for="captchaInput">Enter Captcha:</label>
+        <input type="text" id="captchaInput" required>
+        <button type="submit">Solve Captcha</button>
+    </form>
+    <img id="captchaImage" src="captcha.jpg" alt="Captcha Image">
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('captchaForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const captchaInput = document.getElementById('captchaInput').value;
+            document.getElementById('result').innerText = 'You entered: ' + captchaInput;
+        });
+    </script>
+</body>
+</html>
